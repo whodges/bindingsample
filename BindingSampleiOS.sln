@@ -5,14 +5,7 @@ VisualStudioVersion = 17.5.33209.295
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Counter.Shared", "Counter.Shared\Counter.Shared.shproj", "{6E90C042-C004-4064-9C38-43B293F5803D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CounterShared", "CounterShared\CounterShared.vcxitems", "{CCC28150-BBAE-4C8A-B4F3-3666C8E2CC30}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CounteriOS", "CounteriOS\CounteriOS.vcxproj", "{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counter.iOS", "Counter.iOS\Counter.iOS.csproj", "{5A684C5A-6685-4999-BAD4-079CBCC23D06}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C} = {A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,20 +21,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|Any CPU.ActiveCfg = Debug|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|Any CPU.Build.0 = Debug|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|ARM.ActiveCfg = Debug|x64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|ARM64.Build.0 = Debug|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|x64.ActiveCfg = Debug|x64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|x64.Build.0 = Debug|x64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Debug|x86.ActiveCfg = Debug|x64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|Any CPU.ActiveCfg = Release|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|ARM.ActiveCfg = Release|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|ARM64.ActiveCfg = Release|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|ARM64.Build.0 = Release|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|x64.ActiveCfg = Release|ARM64
-		{A01A2DAE-8B26-4A4C-A420-67E5CAFEA08C}.Release|x86.ActiveCfg = Release|ARM64
 		{5A684C5A-6685-4999-BAD4-079CBCC23D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A684C5A-6685-4999-BAD4-079CBCC23D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A684C5A-6685-4999-BAD4-079CBCC23D06}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -72,7 +51,5 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Counter.Shared\Counter.projitems*{5a684c5a-6685-4999-bad4-079cbcc23d06}*SharedItemsImports = 5
 		Counter.Shared\Counter.projitems*{6e90c042-c004-4064-9c38-43b293f5803d}*SharedItemsImports = 13
-		CounterShared\CounterShared.vcxitems*{a01a2dae-8b26-4a4c-a420-67e5cafea08c}*SharedItemsImports = 4
-		CounterShared\CounterShared.vcxitems*{ccc28150-bbae-4c8a-b4f3-3666c8e2cc30}*SharedItemsImports = 9
 	EndGlobalSection
 EndGlobal
