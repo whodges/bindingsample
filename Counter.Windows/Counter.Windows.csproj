@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <RootNamespace>Counter</RootNamespace>
+	  <AssemblyName>Counter</AssemblyName>
+  </PropertyGroup>
+
+  <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(MSBuildBinPath)\Msbuild&quot; $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+  </Target>
+
+  <ItemGroup>
+    <None Include="PreBuild.proj" />
+  </ItemGroup>
+
+</Project>

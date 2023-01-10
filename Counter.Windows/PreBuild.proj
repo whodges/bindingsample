@@ -1,0 +1,9 @@
+﻿<Project>
+	<ItemGroup>
+		<NativeWindowsFiles Include="$(SolutionDir)CounterWindows\bin\x64\$(Configuration)\CounterWindows.dll" />
+	</ItemGroup>
+
+	<Target Name="Copy Native Windows Files">
+		<Copy SourceFiles="@(NativeWindowsFiles)" DestinationFolder="$(ProjectDir)" SkipUnchangedFiles="true" ContinueOnError="true"/>
+	</Target>
+</Project>

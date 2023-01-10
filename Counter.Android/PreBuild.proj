@@ -1,0 +1,9 @@
+﻿<Project>
+	<ItemGroup>
+		<NativeARM64AndroidFiles Include="$(SolutionDir)CounterAndroid\bin\ARM64\$(Configuration)\libCounterAndroid.so" />
+	</ItemGroup>
+
+	<Target Name="Copy Native Android Files">
+		<Copy SourceFiles="@(NativeARM64AndroidFiles)" DestinationFolder="$(ProjectDir)lib\arm64-v8a" SkipUnchangedFiles="true" ContinueOnError="true"/>
+	</Target>
+</Project>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-android</TargetFramework>
+	<RootNamespace>Counter</RootNamespace>
+	<AssemblyName>Counter</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);__ANDROID__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);__ANDROID__</DefineConstants>
+  </PropertyGroup>
+
+  <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <None Include="PreBuild.proj" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(MSBuildBinPath)\Msbuild&quot; $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+  </Target>
+
+</Project>

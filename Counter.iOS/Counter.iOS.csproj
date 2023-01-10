@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+	<RootNamespace>Counter</RootNamespace>
+	<AssemblyName>Counter</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="PreBuild.proj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <NativeReference Include="libCounteriOS.a">
+	  <Kind>Static</Kind>
+	  <Frameworks></Frameworks>
+	  <LinkerFlags></LinkerFlags>
+	  <WeakFrameworks></WeakFrameworks>
+	  <ForceLoad>True</ForceLoad>
+	  <NeedsGccExceptionHandling>False</NeedsGccExceptionHandling>
+	  <IsCxx>True</IsCxx>
+	  <SmartLink>True</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(MSBuildBinPath)\Msbuild&quot; $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+  </Target>
+
+  <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />
+</Project>
