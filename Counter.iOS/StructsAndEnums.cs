@@ -1,4 +1,4 @@
-namespace Counter.iOS
+namespace Counter
 {
 
 }

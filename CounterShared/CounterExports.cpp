@@ -1,11 +1,11 @@
 #include "CounterExports.h"
 
-Counter* CreateCounter()
+MyCounter* CreateCounter()
 {
-    return new Counter();
+    return new MyCounter();
 }
 
-int GetCount(Counter* counter)
+int GetCount(MyCounter* counter)
 {
     if (counter != nullptr)
         return counter->_count;
@@ -13,13 +13,13 @@ int GetCount(Counter* counter)
     return -1;
 }
 
-void SetCount(Counter* counter, int count)
+void SetCount(MyCounter* counter, int count)
 {
     if (counter != nullptr)
         counter->_count = count;
 }
 
-void DeleteCounter(Counter* counter)
+void DeleteCounter(MyCounter* counter)
 {
     if (counter != nullptr)
     {

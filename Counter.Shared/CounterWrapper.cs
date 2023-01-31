@@ -18,16 +18,16 @@ namespace Counter
 #endif
         internal static string GetDllName() { return DllName; }
 
-        [DllImport(DllName)]
-        internal static extern IntPtr CreateCounter();
+        [DllImport(DllName, EntryPoint = "CreateCounter")]
+        internal static extern MyCounterSafeHandle CreateCounter();
 
-        [DllImport(DllName)]
-        internal static extern int GetCount(IntPtr counter);
+        [DllImport(DllName, EntryPoint = "GetCount")]
+        internal static extern int GetCount(MyCounterSafeHandle counter);
 
-        [DllImport(DllName)]
-        internal static extern void SetCount(IntPtr counter, int count);
+        [DllImport(DllName, EntryPoint = "SetCount")]
+        internal static extern void SetCount(MyCounterSafeHandle counter, int count);
 
-        [DllImport(DllName)]
-        internal static extern void DeleteCounter(IntPtr counter);
+        [DllImport(DllName, EntryPoint = "DeleteCounter")]
+        internal static extern void DeleteCounter(MyCounterSafeHandle counter);
     }
 }

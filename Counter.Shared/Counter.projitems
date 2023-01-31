@@ -9,7 +9,8 @@
     <Import_RootNamespace>Counter</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Counter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyCounterSafeHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CounterWrapper.cs" />
   </ItemGroup>
 </Project>

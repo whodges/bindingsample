@@ -1,14 +1,16 @@
-﻿namespace BasicMauiApp
+﻿using Counter;
+
+namespace BasicMauiApp
 {
     public partial class MainPage : ContentPage
     {
-        Counter.Counter _externalCounter;
+        MyCounter _externalCounter;
 
         public MainPage()
         {
             InitializeComponent();
 
-            _externalCounter = new Counter.Counter();
+            _externalCounter = new MyCounter();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

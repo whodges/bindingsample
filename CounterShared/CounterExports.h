@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Counter.h"
+#include "MyCounter.h"
+using namespace Counter;
 
 #ifdef _WINDOWS
 #define DllExport _declspec(dllexport)
@@ -10,8 +11,8 @@
 
 extern "C"
 {
-    DllExport Counter* CreateCounter();
-    DllExport int GetCount(Counter* counter);
-    DllExport void SetCount(Counter* counter, int count);
-    DllExport void DeleteCounter(Counter* counter);
+    DllExport MyCounter* CreateCounter();
+    DllExport int GetCount(MyCounter* counter);
+    DllExport void SetCount(MyCounter* counter, int count);
+    DllExport void DeleteCounter(MyCounter* counter);
 }

@@ -14,11 +14,11 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Counter.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyCounter.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CounterExports.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Counter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MyCounter.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CounterExports.h" />
   </ItemGroup>
 </Project>
