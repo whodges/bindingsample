@@ -16,4 +16,10 @@
     <None Include="PreBuild.proj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="CounterWindows.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
