@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counter.iOS", "Counter.iOS\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counter.Android", "Counter.Android\Counter.Android.csproj", "{63BFFE7A-CACF-4E33-A9D1-F2CC5EF2167D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMauiApp", "BasicMauiApp\BasicMauiApp.csproj", "{A4F85C39-69BE-4B17-965A-AD5543F5076E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicMauiApp", "BasicMauiApp\BasicMauiAppMac.csproj", "{A4F85C39-69BE-4B17-965A-AD5543F5076E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
