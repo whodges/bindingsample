@@ -30,6 +30,11 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	  <CodesignKey>Apple Development: Created via API (924T6T7U9H)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -64,12 +69,8 @@
 		<ProjectReference Include="..\Counter.Windows\Counter.Windows.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Include="PostBuild.proj" />
-	</ItemGroup>
-
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="dotnet build $(ProjectDir)\PostBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+	  <Exec Command="xcopy &quot;$(SolutionDir)Counter.Android\lib&quot; &quot;$(ProjectDir)Resources\lib&quot; /e /y" />
 	</Target>
 
 </Project>

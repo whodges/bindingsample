@@ -6,6 +6,7 @@
     <IsBindingProject>true</IsBindingProject>
 	<RootNamespace>Counter</RootNamespace>
 	<AssemblyName>Counter</AssemblyName>
+	<Platforms>ARM64;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <None Include="PreBuild.proj" />
@@ -30,7 +31,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="&quot;$(MSBuildBinPath)\Msbuild&quot; $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+    <Exec Command="dotnet build $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Platform=$(Platform);Configuration=$(ConfigurationName)" />
   </Target>
 
   <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />
