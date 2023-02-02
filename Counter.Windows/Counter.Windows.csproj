@@ -9,7 +9,7 @@
   <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="&quot;$(MSBuildBinPath)\Msbuild&quot; $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
+    <Exec Command="dotnet build $(ProjectDir)\PreBuild.proj /p:SolutionDir=$(SolutionDir);ProjectDir=$(ProjectDir);TargetDir=$(TargetDir);Configuration=$(ConfigurationName)" />
   </Target>
 
   <ItemGroup>
