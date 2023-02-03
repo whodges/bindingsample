@@ -6,7 +6,6 @@
     <IsBindingProject>true</IsBindingProject>
 	<RootNamespace>Counter</RootNamespace>
 	<AssemblyName>Counter</AssemblyName>
-	<Platforms>ARM64;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <None Include="PreBuild.proj" />
