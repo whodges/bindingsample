@@ -1,6 +1,6 @@
 ﻿<Project>
 	<ItemGroup>
-		<NativeiOSFiles Include="$(SolutionDir)CounteriOS\bin\$(Platform)\$(Configuration)\libCounteriOS.a" />
+		<NativeiOSFiles Include="$(SolutionDir)CounteriOS\bin\ARM64\$(Configuration)\libCounteriOS.a" />
 	</ItemGroup>
 
 	<Target Name="Copy Native iOS Files">
