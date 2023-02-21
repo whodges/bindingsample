@@ -62,7 +62,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-ios' Or '$(TargetFramework)'=='net7.0-maccatalyst'">
-		<Reference Include="../Counter.iOS.Copy/bin/Debug/net7.0-ios/Counter.dll" />
+		<ProjectReference Include="..\Counter.iOS\Counter.iOS.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041.0'">
