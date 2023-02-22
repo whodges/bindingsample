@@ -1,6 +1,6 @@
 ﻿<Project>
 	<ItemGroup>
-		<NativeWindowsFiles Include="$(SolutionDir)CounterWindows\bin\$(Platform)\$(Configuration)\CounterWindows.dll" />
+		<NativeWindowsFiles Include="$(SolutionDir)CounterWindows\bin\x64\$(Configuration)\CounterWindows.dll" />
 	</ItemGroup>
 
 	<Target Name="Copy Native Windows Files">
