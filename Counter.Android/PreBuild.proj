@@ -1,14 +1,11 @@
 ﻿<Project>
 	<ItemGroup>
-		<NativeAndroidFiles Include="$(SolutionDir)CounterAndroid\bin\$(Platform)\$(Configuration)\libCounterAndroid.so" />
+		<NativeArm64AndroidFiles Include="$(SolutionDir)CounterAndroid.Arm64\bin\ARM64\$(Configuration)\libCounterAndroid.so" />
+		<NativeX64AndroidFiles Include="$(SolutionDir)CounterAndroid.x64\bin\x64\$(Configuration)\libCounterAndroid.so" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<AndroidPlatform>arm64-v8a</AndroidPlatform>
-		<AndroidPlatform Condition=" '$(Platform)' == 'x64' ">x86_64</AndroidPlatform>
-	</PropertyGroup>
-
 	<Target Name="Copy Native Android Files">
-		<Copy SourceFiles="@(NativeAndroidFiles)" DestinationFolder="$(ProjectDir)lib\$(AndroidPlatform)" SkipUnchangedFiles="true" ContinueOnError="true"/>
+		<Copy SourceFiles="@(NativeArm64AndroidFiles)" DestinationFolder="$(ProjectDir)lib\arm64-v8a" SkipUnchangedFiles="true" ContinueOnError="true"/>
+		<Copy SourceFiles="@(NativeX64AndroidFiles)" DestinationFolder="$(ProjectDir)lib\x86_64" SkipUnchangedFiles="true" ContinueOnError="true"/>
 	</Target>
 </Project>

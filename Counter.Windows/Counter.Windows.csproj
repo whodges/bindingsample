@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
 	  <RootNamespace>Counter</RootNamespace>
 	  <AssemblyName>Counter</AssemblyName>
-	  <Platforms>x64</Platforms>
+	  <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <Import Project="..\Counter.Shared\Counter.projitems" Label="Shared" />

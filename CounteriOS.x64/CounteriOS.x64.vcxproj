@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CopyFromMac.bat" />
+    <None Include="CopyToMac.bat" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A4D7FF8-5EB1-44A3-A368-763DD7D76D17}</ProjectGuid>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <Keyword>iOS</Keyword>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>iOS</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <iOSConfigurationType>StaticLibrary</iOSConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>XCode_6_1</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <iOSConfigurationType>StaticLibrary</iOSConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>XCode_6_1</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared">
+    <Import Project="..\CounterShared\CounterShared.vcxitems" Label="Shared" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>call CopyFromMac.bat "$(MacRootDir)$(MacBuildRoot)\$(OutDir)" "$(OutDir)"
+xcopy /Y "$(OutDir)libCounteriOS.x64.a" "$(ProjectDir)..\CounteriOS.Arm64"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>call CopyToMac.bat "$(ProjectDir)..\CounterShared\" "$(MacRootDir)$(MacBuildRoot)\$(OutDir)..\..\..\..\CounterShared\"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>call CopyFromMac.bat "$(MacRootDir)$(MacBuildRoot)\$(OutDir)" "$(OutDir)"
+xcopy /Y "$(OutDir)libCounteriOS.x64.a" "$(ProjectDir)..\CounteriOS.Arm64"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>call CopyToMac.bat "$(ProjectDir)..\CounterShared\" "$(MacRootDir)$(MacBuildRoot)\$(OutDir)..\..\..\..\CounterShared\"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
