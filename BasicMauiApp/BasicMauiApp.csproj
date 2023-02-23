@@ -70,7 +70,7 @@
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="xcopy &quot;$(SolutionDir)Counter.Android\lib\&quot; &quot;$(ProjectDir)Resources\lib\&quot; /e /y" />
+	  <Exec Command="xcopy &quot;$(ProjectDir)..\Counter.Android\lib\&quot; &quot;$(ProjectDir)Resources\lib\&quot; /e /y" />
 	</Target>
 
 </Project>
